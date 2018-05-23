@@ -12,7 +12,7 @@ public class BasicsAndAdditionsPricesTest {
 
         hamburger.order();
 
-        System.out.println("****");
+        System.out.println("\n****\n");
 
         BasicsPrices bPrices = new BasicsPrices(Items.FISH_BURGER, Items.STANDARD_BREAD, "Fish burger", "Standard bread");
         AdditionsPrices aPrices = new AdditionsPrices(Items.BASIL_PESTO, "Basil pesto", Items.BLUE_CHEESE, "Blue cheese", Items.CUCUMBER,
@@ -23,15 +23,15 @@ public class BasicsAndAdditionsPricesTest {
 
         healthyBurger.order();
 
-        System.out.println("****");
+        System.out.println("\n****\n");
 
         BasicsPrices baPrices = new BasicsPrices(Items.BEEF_BURGER, Items.DARK_BREAD, "Beef burger", "Dark bread");
         AdditionsPrices adPrices = new AdditionsPrices(Items.KETCHUP, "Ketchup", Items.BLUE_CHEESE, "Blue cheese", Items.CUCUMBER,
                 "Cucumber", Items.JALAPENO, "Bacon");
 
-        Burger deluxeBurger = new DeluxeBurger(adPrices, baPrices, "French fries", Items.FRENCH_FRIES, "Beer", Items.BEER);
+        Burger deluxeBurger = new DeluxeBurger(adPrices, baPrices, "French fries", "Beer", Items.FRENCH_FRIES, Items.BEER);
 
-        healthyBurger.order();
+        deluxeBurger.order();
 
     }
 }
