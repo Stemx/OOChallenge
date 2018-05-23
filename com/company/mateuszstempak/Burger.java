@@ -12,13 +12,13 @@ public class Burger {
         this.totalPrice = 0;
     }
 
-    public int sumPrice(AdditionsPrices additionsPrices, BasicsPrices basicsPrices) {
+    public int totalPrice() {
         totalPrice = additionsPrices.addPrice() + basicsPrices.addPrice();
         return totalPrice;
     }
 
     public void printTotal() {
-        System.out.println("TOTAL: " + sumPrice(additionsPrices, basicsPrices) + " PLN");
+        System.out.println("TOTAL: " + totalPrice() + " PLN");
     }
 
     public void order() {

@@ -18,9 +18,32 @@ public class HealthyBurger extends Burger {
         this.item6 = item6;
     }
 
+    @Override
     public int totalPrice() {
-        int finalValue = super.sumPrice(getAdditionsPrices(), getBasicsPrices()); // + to cena dodatkowych produktów w tej klasie
+        int finalValue = super.totalPrice() +
+                getAdditionsPrices().tellPrice(items5) + getAdditionsPrices().tellPrice(items6);
         return finalValue;
+    }
+
+    @Override
+    public void printTotal() {
+        System.out.println("TOTAL: " + totalPrice() + " PLN.");
+    }
+
+    @Override
+    public void order() {
+
+        getBasicsPrices().printBurgerOrder(getBasicsPrices().getItem1());
+        getBasicsPrices().printBreadOrder(getBasicsPrices().getItem2());
+
+        getAdditionsPrices().printOrder(getAdditionsPrices().getItem1());
+        getAdditionsPrices().printOrder(getAdditionsPrices().getItem2());
+        getAdditionsPrices().printOrder(getAdditionsPrices().getItem3());
+        getAdditionsPrices().printOrder(getAdditionsPrices().getItem4());
+        getAdditionsPrices().printOrder(getItem5());
+        getAdditionsPrices().printOrder(getItem6());
+        System.out.println("------------------------");
+        printTotal();
     }
 
     public Items getItems5() {
