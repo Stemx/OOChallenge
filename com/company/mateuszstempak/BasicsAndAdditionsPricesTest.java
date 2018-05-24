@@ -4,9 +4,8 @@ public class BasicsAndAdditionsPricesTest {
 
     public static void main(String[] args) {
 
-        BasicsPrices basicsPrices = new BasicsPrices(Items.VEGE_BURGER, Items.DARK_BREAD, "Vege burger", "Dark bread");
-        AdditionsPrices additionsPrices = new AdditionsPrices(Items.JALAPENO, "Jalapeno", Items.KETCHUP, "Ketchup",
-                Items.BASIL_PESTO, "Basil pesto", Items.BACON, "Bacon");
+        BasicsPrices basicsPrices = new BasicsPrices(Items.VEGE_BURGER, Items.DARK_BREAD);
+        AdditionsPrices additionsPrices = new AdditionsPrices(Items.JALAPENO, Items.KETCHUP, Items.BASIL_PESTO, Items.BACON);
 
         Burger hamburger = new Burger(additionsPrices, basicsPrices);
 
@@ -14,22 +13,20 @@ public class BasicsAndAdditionsPricesTest {
 
         System.out.println("\n****\n");
 
-        BasicsPrices bPrices = new BasicsPrices(Items.FISH_BURGER, Items.STANDARD_BREAD, "Fish burger", "Standard bread");
-        AdditionsPrices aPrices = new AdditionsPrices(Items.BASIL_PESTO, "Basil pesto", Items.BLUE_CHEESE, "Blue cheese", Items.CUCUMBER,
-                "Cucumber", Items.BACON, "Bacon");
+        BasicsPrices bPrices = new BasicsPrices(Items.FISH_BURGER, Items.STANDARD_BREAD);
+        AdditionsPrices aPrices = new AdditionsPrices(Items.BASIL_PESTO, Items.BLUE_CHEESE, Items.CUCUMBER, Items.BACON);
 
-        Burger healthyBurger = new HealthyBurger(aPrices, bPrices, Items.BARBECUE_SAUCE, "Barbecue sauce",
-                Items.JALAPENO, "Jalapeno");
+        Burger healthyBurger = new HealthyBurger(aPrices, bPrices, Items.BARBECUE_SAUCE,
+                Items.JALAPENO);
 
         healthyBurger.order();
 
         System.out.println("\n****\n");
 
-        BasicsPrices baPrices = new BasicsPrices(Items.BEEF_BURGER, Items.DARK_BREAD, "Beef burger", "Dark bread");
-        AdditionsPrices adPrices = new AdditionsPrices(Items.KETCHUP, "Ketchup", Items.BLUE_CHEESE, "Blue cheese", Items.CUCUMBER,
-                "Cucumber", Items.JALAPENO, "Bacon");
+        BasicsPrices baPrices = new BasicsPrices(Items.BEEF_BURGER, Items.DARK_BREAD);
+        AdditionsPrices adPrices = new AdditionsPrices(Items.KETCHUP, Items.BLUE_CHEESE, Items.CUCUMBER, Items.JALAPENO);
 
-        Burger deluxeBurger = new DeluxeBurger(adPrices, baPrices, "French fries", "Beer", Items.FRENCH_FRIES, Items.BEER);
+        Burger deluxeBurger = new DeluxeBurger(adPrices, baPrices, Items.FRENCH_FRIES, Items.BEER);
 
         deluxeBurger.order();
 

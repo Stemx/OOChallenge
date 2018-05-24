@@ -1,11 +1,11 @@
 package com.company.mateuszstempak;
 
 public class AdditionsPrices extends Price {
-    private final int FIRST_PRICE;
-    private final int SECOND_PRICE;
-    private final int THIRD_PRICE;
-    private final int FOURTH_PRICE;
-    private final int FIFTH_PRICE;
+    private final int FIRST_PRICE = 1;
+    private final int SECOND_PRICE = 2;
+    private final int THIRD_PRICE = 4;
+    private final int FOURTH_PRICE = 6;
+    private final int FIFTH_PRICE = 9;
     private int price;
 
     private Items items1;
@@ -18,22 +18,36 @@ public class AdditionsPrices extends Price {
     private String item3;
     private String item4;
 
-    public AdditionsPrices(Items items1, String item1, Items items2, String item2, Items items3,
-                           String item3, Items items4, String item4) {
-        this.FIRST_PRICE = 1;
-        this.SECOND_PRICE = 2;
-        this.THIRD_PRICE = 4;
-        this.FOURTH_PRICE = 6;
-        this.FIFTH_PRICE = 9;
+    public AdditionsPrices(Items items1, Items items2, Items items3, Items items4) {
+        this.item1 = "";
+        this.item2 = "";
+        this.item3 = "";
+        this.item4 = "";
         this.items1 = items1;
-        this.item1 = item1;
+        this.setItem1(tellItem(items1));
         this.items2 = items2;
-        this.item2 = item2;
+        this.setItem2(tellItem(items2));
         this.items3 = items3;
-        this.item3 = item3;
+        this.setItem3(tellItem(items3));
         this.items4 = items4;
-        this.item4 = item4;
+        this.setItem4(tellItem(items4));
         this.price = 0;
+    }
+
+    public void setItem1(String item1) {
+        this.item1 = item1;
+    }
+
+    public void setItem2(String item2) {
+        this.item2 = item2;
+    }
+
+    public void setItem3(String item3) {
+        this.item3 = item3;
+    }
+
+    public void setItem4(String item4) {
+        this.item4 = item4;
     }
 
     public String getItem1() {
@@ -137,6 +151,83 @@ public class AdditionsPrices extends Price {
         return 0;
     }
 
+    public String tellItem(Items items) {
+
+        switch(items) {
+
+            case BASIL:
+                return "Basil";
+
+            case BACON:
+                return "Bacon";
+
+            case BASIL_PESTO:
+                return "Basil pesto";
+
+            case BARBECUE_SAUCE:
+                return "Barbecue sauce";
+
+            case BLUE_CHEESE:
+                return "Blue cheese";
+
+            case CHEESE:
+                return "Cheese";
+
+            case CUCUMBER:
+                return "Cucumber";
+
+            case JALAPENO:
+                return "Jalapeno";
+
+            case KETCHUP:
+                return "Ketchup";
+
+            case LETTUCE:
+                return "Lettuce";
+
+            case MAYONNAISE:
+                return "Mayonnaise";
+
+            case MUSTARD:
+                return "Mustard";
+
+            case PAPRIKA:
+                return "Paprika";
+
+            case PARSLEY_PESTO:
+                return "Parsley pesto";
+
+            case RUCOLA:
+                return "Rucola";
+
+            case SALSA:
+                return "Salsa";
+
+            case TOMATO:
+                return "Tomato";
+
+            case POTATO_CHIPS:
+                return "Potato chips";
+
+            case FRENCH_FRIES:
+                return "French fries";
+
+            case BELGIAN_FRIES:
+                return "Belgian fries";
+
+            case COFFEE:
+                return "Coffee";
+
+            case BEER:
+                return "Beer";
+
+            case BARTENDER_DRINK:
+                return "Bartender drink";
+        }
+
+        return null;
+    }
+
     public void printOrder(String item) {
         switch(item) {
             case "Tomato":
@@ -226,8 +317,5 @@ public class AdditionsPrices extends Price {
 
         return totalPrice;
     }
-
-
-
 
 }

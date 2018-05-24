@@ -1,14 +1,14 @@
 package com.company.mateuszstempak;
 
 public class BasicsPrices extends Price {
-    private final int BEEF_PRICE;
-    private final int CHICKEN_PRICE;
-    private final int FISH_PRICE;
-    private final int VEGE_PRICE;
-    private final int STANDARD_BREAD_PRICE;
-    private final int DARK_BREAD_PRICE;
-    private final int HEALTHY_BREAD_PRICE;
-    private final int BROWN_RYE_BREAD_PRICE;
+    private final int BEEF_PRICE = 14;
+    private final int CHICKEN_PRICE = 12;
+    private final int FISH_PRICE = 11;
+    private final int VEGE_PRICE = 9;
+    private final int STANDARD_BREAD_PRICE = 2;
+    private final int DARK_BREAD_PRICE = 3;
+    private final int HEALTHY_BREAD_PRICE = 4;
+    private final int BROWN_RYE_BREAD_PRICE = 6;
 
     private int price;
     private String item1;
@@ -17,20 +17,14 @@ public class BasicsPrices extends Price {
     private Items items1;
     private Items items2;
 
-    public BasicsPrices(Items items1, Items items2, String item1, String item2) {
-        this.BEEF_PRICE = 14;
-        this.CHICKEN_PRICE = 12;
-        this.FISH_PRICE = 11;
-        this.VEGE_PRICE = 9;
-        this.STANDARD_BREAD_PRICE = 2;
-        this.DARK_BREAD_PRICE = 3;
-        this.HEALTHY_BREAD_PRICE = 4;
-        this.BROWN_RYE_BREAD_PRICE = 6;
+    public BasicsPrices(Items items1, Items items2) {
         this.price = 0;
+        this.item1 = "";
+        this.item2 = "";
         this.items1 = items1;
+        this.setItem1(tellItem(this.items1));
         this.items2 = items2;
-        this.item1 = item1;
-        this.item2 = item2;
+        this.setItem2(tellItem(this.items2));
     }
 
     public Items getItems1() {
@@ -77,32 +71,50 @@ public class BasicsPrices extends Price {
 
         switch(items) {
             case BEEF_BURGER:
-                item1 = "Beef burger";
                 return BEEF_PRICE;
             case CHICKEN_BURGER:
-                item1 = "Chicken burger";
                 return CHICKEN_PRICE;
             case FISH_BURGER:
-                item1 = "Fish burger";
                 return FISH_PRICE;
             case VEGE_BURGER:
-                item1 = "Vege burger";
                 return VEGE_PRICE;
             case STANDARD_BREAD:
-                item2 = "Standard bread";
                 return STANDARD_BREAD_PRICE;
             case DARK_BREAD:
-                item2 = "Dark bread";
                 return DARK_BREAD_PRICE;
             case HEALTHY_BREAD:
-                item2 = "Healthy bread";
                 return HEALTHY_BREAD_PRICE;
             case BROWN_RYE_BREAD:
-                item2 = "Brown rye bread";
                 return BROWN_RYE_BREAD_PRICE;
         }
 
         return 0;
+    }
+
+    //Dodać metodę tellItem do AdditionsPrice i zająć się usuwaniem Stringów z konstruktorów
+
+    public String tellItem(Items items) {
+
+        switch(items) {
+            case BEEF_BURGER:
+                return "Beef burger";
+            case CHICKEN_BURGER:
+                return "Chicken burger";
+            case FISH_BURGER:
+                return "Fish burger";
+            case VEGE_BURGER:
+                return "Vege burger";
+            case STANDARD_BREAD:
+                return "Standard bread";
+            case DARK_BREAD:
+                return "Dark bread";
+            case HEALTHY_BREAD:
+                return "Healthy bread";
+            case BROWN_RYE_BREAD:
+                return "Brown rye bread";
+        }
+
+        return null;
     }
 
     public void printBreadOrder(String item) {

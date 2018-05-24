@@ -7,15 +7,17 @@ public class HealthyBurger extends Burger {
     private String item5;
     private String item6;
 
-    public HealthyBurger(AdditionsPrices additionsPrices, BasicsPrices basicsPrices, Items items5, String item5,
-                         Items items6, String item6) {
+    public HealthyBurger(AdditionsPrices additionsPrices, BasicsPrices basicsPrices, Items items5,
+                         Items items6) {
         super(additionsPrices, basicsPrices);
-        basicsPrices.setItem2("Brown rye bread");
         basicsPrices.setItems2(Items.BROWN_RYE_BREAD);
+        basicsPrices.setItem2(basicsPrices.tellItem(Items.BROWN_RYE_BREAD));
+        this.item5 = "";
+        this.item6 = "";
         this.items5 = items5;
+        this.setItem5(additionsPrices.tellItem(items5));
         this.items6 = items6;
-        this.item5 = item5;
-        this.item6 = item6;
+        this.setItem5(additionsPrices.tellItem(items6));
     }
 
     @Override
@@ -33,6 +35,7 @@ public class HealthyBurger extends Burger {
     @Override
     public void order() {
 
+        System.out.println("Your order: \n");
         getBasicsPrices().printBurgerOrder(getBasicsPrices().getItem1());
         getBasicsPrices().printBreadOrder(getBasicsPrices().getItem2());
 

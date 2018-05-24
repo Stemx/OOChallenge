@@ -8,12 +8,23 @@ public class DeluxeBurger extends Burger {
     private Items chipsItem;
     private Items drinkItem;
 
-    public DeluxeBurger(AdditionsPrices additionsPrices, BasicsPrices basicsPrices, String chips, String drink, Items chipsItem, Items drinkItem) {
+    public DeluxeBurger(AdditionsPrices additionsPrices, BasicsPrices basicsPrices, Items chipsItem, Items drinkItem) {
         super(additionsPrices, basicsPrices);
-        this.chips = chips;
-        this.drink = drink;
-        this.chipsItem = chipsItem;
-        this.drinkItem = drinkItem;
+        this.chips = "";
+        this.drink = "";
+        if (chipsItem.equals(Items.POTATO_CHIPS) || chipsItem.equals(Items.FRENCH_FRIES) || chipsItem.equals(Items.BELGIAN_FRIES)) {
+            this.chipsItem = chipsItem;
+            setChips(additionsPrices.tellItem(chipsItem));
+        }
+        else
+            System.out.println("You cannot choose it.");
+
+        if (drinkItem.equals(Items.BEER) || drinkItem.equals(Items.COFFEE) || drinkItem.equals(Items.BARTENDER_DRINK)) {
+            this.drinkItem = drinkItem;
+            setDrink(additionsPrices.tellItem(drinkItem));
+        }
+        else
+            System.out.println("You cannot choose it.");
     }
 
     @Override
@@ -30,6 +41,7 @@ public class DeluxeBurger extends Burger {
 
     @Override
     public void order() {
+        System.out.println("Your order: \n");
         getBasicsPrices().printBurgerOrder(getBasicsPrices().getItem1());
         getBasicsPrices().printBreadOrder(getBasicsPrices().getItem2());
 
@@ -41,6 +53,14 @@ public class DeluxeBurger extends Burger {
         getAdditionsPrices().printOrder(getDrink());
         System.out.println("------------------------");
         printTotal();
+    }
+
+    public void setChips(String chips) {
+        this.chips = chips;
+    }
+
+    public void setDrink(String drink) {
+        this.drink = drink;
     }
 
     public String getChips() {

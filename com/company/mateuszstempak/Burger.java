@@ -23,7 +23,7 @@ public class Burger {
 
     public void order() {
 
-        System.out.println("Your order: ");
+        System.out.println("Your order: \n");
 
         basicsPrices.printBurgerOrder(basicsPrices.getItem1());
         basicsPrices.printBreadOrder(basicsPrices.getItem2());
