@@ -1,17 +1,22 @@
 package com.company.mateuszstempak;
 
+//DeluxeBurger inherits from Burger
 public class DeluxeBurger extends Burger {
 
+    //String and enum representation for two additional additions
     private String chips;
     private String drink;
 
     private Items chipsItem;
     private Items drinkItem;
 
+
+    //Constructor
     public DeluxeBurger(AdditionsPrices additionsPrices, BasicsPrices basicsPrices, Items chipsItem, Items drinkItem) {
         super(additionsPrices, basicsPrices);
         this.chips = "";
         this.drink = "";
+        //change empty Strings into item: chips and drink
         if (chipsItem.equals(Items.POTATO_CHIPS) || chipsItem.equals(Items.FRENCH_FRIES) || chipsItem.equals(Items.BELGIAN_FRIES)) {
             this.chipsItem = chipsItem;
             setChips(additionsPrices.tellItem(chipsItem));
@@ -27,6 +32,7 @@ public class DeluxeBurger extends Burger {
             System.out.println("You cannot choose it.");
     }
 
+    //Overridden method from Burger
     @Override
     public int totalPrice() {
         int finalValue = super.totalPrice() +
@@ -34,11 +40,13 @@ public class DeluxeBurger extends Burger {
         return finalValue;
     }
 
+    //Override method from Burger
     @Override
     public void printTotal() {
         System.out.println("TOTAL: " + totalPrice() + " PLN.");
     }
 
+    //Override method from Burger
     @Override
     public void order() {
         System.out.println("Your order: \n");
@@ -55,6 +63,7 @@ public class DeluxeBurger extends Burger {
         printTotal();
     }
 
+    //Setters and getters
     public void setChips(String chips) {
         this.chips = chips;
     }

@@ -1,6 +1,7 @@
 package com.company.mateuszstempak;
 
 public class BasicsPrices extends Price {
+    //Price constants
     private final int BEEF_PRICE = 14;
     private final int CHICKEN_PRICE = 12;
     private final int FISH_PRICE = 11;
@@ -10,13 +11,18 @@ public class BasicsPrices extends Price {
     private final int HEALTHY_BREAD_PRICE = 4;
     private final int BROWN_RYE_BREAD_PRICE = 6;
 
+    //Global (for this class) variable for price
     private int price;
+
+    //String representation
     private String item1;
     private String item2;
 
+    //Enum Items - two fields
     private Items items1;
     private Items items2;
 
+    //Constructor which takes two basic items: burger and bread
     public BasicsPrices(Items items1, Items items2) {
         this.price = 0;
         this.item1 = "";
@@ -27,6 +33,7 @@ public class BasicsPrices extends Price {
         this.setItem2(tellItem(this.items2));
     }
 
+    //Getters and setters
     public Items getItems1() {
         return items1;
     }
@@ -59,14 +66,7 @@ public class BasicsPrices extends Price {
         this.item2 = item2;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
+    //Method which return what is the price for each item
     public int tellPrice(Items items) {
 
         switch(items) {
@@ -91,8 +91,7 @@ public class BasicsPrices extends Price {
         return 0;
     }
 
-    //Dodać metodę tellItem do AdditionsPrice i zająć się usuwaniem Stringów z konstruktorów
-
+    //Method which returns String representation for enum Items
     public String tellItem(Items items) {
 
         switch(items) {
@@ -117,6 +116,7 @@ public class BasicsPrices extends Price {
         return null;
     }
 
+    //Print bread order
     public void printBreadOrder(String item) {
         switch(item) {
             case "Standard bread":
@@ -137,7 +137,7 @@ public class BasicsPrices extends Price {
         }
     }
 
-
+    //Print burger order
     public void printBurgerOrder(String item) {
         switch(item) {
             case "Beef burger":
@@ -158,6 +158,7 @@ public class BasicsPrices extends Price {
         }
     }
 
+    //A method which returns overall price for basics
     public int addPrice() {
         int currentPrice = 0;
         int totalPrice;

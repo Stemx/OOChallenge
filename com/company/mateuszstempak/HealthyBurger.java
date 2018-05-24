@@ -1,12 +1,16 @@
 package com.company.mateuszstempak;
 
+//DeluxeBurger inherits from Burger
 public class HealthyBurger extends Burger {
+
+    //Two additional additions
     private Items items5;
     private Items items6;
 
     private String item5;
     private String item6;
 
+    //Constructor
     public HealthyBurger(AdditionsPrices additionsPrices, BasicsPrices basicsPrices, Items items5,
                          Items items6) {
         super(additionsPrices, basicsPrices);
@@ -20,6 +24,7 @@ public class HealthyBurger extends Burger {
         this.setItem5(additionsPrices.tellItem(items6));
     }
 
+    //Overridden methods
     @Override
     public int totalPrice() {
         int finalValue = super.totalPrice() +
@@ -49,6 +54,7 @@ public class HealthyBurger extends Burger {
         printTotal();
     }
 
+    //Getters and setters
     public Items getItems5() {
         return items5;
     }

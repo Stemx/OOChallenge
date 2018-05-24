@@ -1,23 +1,29 @@
 package com.company.mateuszstempak;
 
 public class AdditionsPrices extends Price {
+    //Price constants
     private final int FIRST_PRICE = 1;
     private final int SECOND_PRICE = 2;
     private final int THIRD_PRICE = 4;
     private final int FOURTH_PRICE = 6;
     private final int FIFTH_PRICE = 9;
+
+    //Global (for this class) price variable
     private int price;
 
+    //User additions items
     private Items items1;
     private Items items2;
     private Items items3;
     private Items items4;
 
+    //Strings representation of Enum Items
     private String item1;
     private String item2;
     private String item3;
     private String item4;
 
+    //Constructor with 4 enum Items references
     public AdditionsPrices(Items items1, Items items2, Items items3, Items items4) {
         this.item1 = "";
         this.item2 = "";
@@ -34,6 +40,7 @@ public class AdditionsPrices extends Price {
         this.price = 0;
     }
 
+    //Setters
     public void setItem1(String item1) {
         this.item1 = item1;
     }
@@ -50,6 +57,7 @@ public class AdditionsPrices extends Price {
         this.item4 = item4;
     }
 
+    //Getters
     public String getItem1() {
         return item1;
     }
@@ -66,14 +74,7 @@ public class AdditionsPrices extends Price {
         return item4;
     }
 
-    public int getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
+    //Method which return what is the price for each item
     public int tellPrice(Items items) {
 
         switch(items) {
@@ -151,6 +152,7 @@ public class AdditionsPrices extends Price {
         return 0;
     }
 
+    //Method which returns String representation for enum Items
     public String tellItem(Items items) {
 
         switch(items) {
@@ -228,6 +230,7 @@ public class AdditionsPrices extends Price {
         return null;
     }
 
+    //Print each item
     public void printOrder(String item) {
         switch(item) {
             case "Tomato":
@@ -305,6 +308,7 @@ public class AdditionsPrices extends Price {
         }
     }
 
+    //A method which returns overall price for additions
     public int addPrice() {
         int currentPrice = 0;
         int totalPrice;

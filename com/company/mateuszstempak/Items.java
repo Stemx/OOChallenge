@@ -1,5 +1,7 @@
 package com.company.mateuszstempak;
 
+//Every possible Items user can choose
+
 public enum Items {
     TOMATO, CUCUMBER, LETTUCE, RUCOLA, BACON, CHEESE, BLUE_CHEESE, JALAPENO, PAPRIKA, BASIL, BASIL_PESTO,
     PARSLEY_PESTO, SALSA, KETCHUP, MUSTARD, MAYONNAISE, BARBECUE_SAUCE, BEEF_BURGER, CHICKEN_BURGER,

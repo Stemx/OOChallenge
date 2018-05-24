@@ -1,6 +1,6 @@
 package com.company.mateuszstempak;
 
-public class BasicsAndAdditionsPricesTest {
+public class BurgersTest {
 
     public static void main(String[] args) {
 
